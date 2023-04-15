@@ -1,0 +1,18 @@
+/*18 NESTING FUNCTIONS  IN SQL 
+Created by Patrick Mensah 
+Date Created: 04/11/2023
+Description:  This query shows how to use nesting functions in SQL 
+*/
+
+--Assuming we want to find the all time global sales 
+
+SELECT 
+    ROUND(SUM(Total),2) AS 'Total Sales', --this sums all the values in the total field or column and rounding them into 2 decimal place. This is what we call nesting
+    ROUND(AVG(Total),2) AS 'Average Sales' ,--this returns average of the total column and rounding them into 2 decimal place. This is what we call nesting
+    MAX(Total) AS 'Highest Sales',--this returns the highest sales 
+    MIN(Total) AS 'Minimum Sales',--this returns the minmum sales 
+    COUNT(Total) AS 'Sales Count', --total, another way is below
+    COUNT(*) AS 'Sales Counts'
+FROM 
+    Invoice
+    
